@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>text</title>
+    <style>
+        span {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="getText">get text</button>
+
+    <h1 id="sample">
+        Hello
+        <span>World123</span>
+    </h1>
+    <h1 id="result"></h1>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // ●取得或設定 HTML tag 內的文字
+        // ●取值: .text()
+        // ●設值: .text(text)
+
+        // InnerText
+        // const sampleText = $("#sample").text();
+        // $("#result").text(sampleText);
+
+
+        // ●跟.text()類似，但會取得或設定 HTML tag 的HTML內容
+        // ●取值: .html()
+        // ●設值: .html(html)
+
+        // InnerHTML
+        // const sampleHtml = $("#sample").html();
+        // $("#result").html(sampleText);
+
+        const sampleHtml = $("#sample").html();
+        $("#result").text(sampleHtml);
+    </script>
+</body>
+
+</html>
