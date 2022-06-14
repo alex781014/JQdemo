@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>children</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <ul class="level-1">
+                <li class="item-1">item-1</li>
+                <li class="item-2">
+                    item-2
+                    <ul class="level-2">
+                        <li class="item-01">item-01</li>
+                        <li class="item-02">
+                            item-02
+                            <ul class="level-3">
+                                <li class="item-001">item-001</li>
+                                <li class="item-002">item-002</li>
+                                <li class="item-003">item-003</li>
+                            </ul>
+                        </li>
+                        <li class="item-03">item-03</li>
+                    </ul>
+                </li>
+                <li class="item-3">item-3</li>
+            </ul>
+        </div>
+    </div>
+    <!-- .children()- 所有條件相符子元素(只找一層) -->
+    <!-- .find()- 找條件相符子孫元素 用find~好用 -->
+    <!-- ●.parent()- 往上選取一層
+        ●.closest()- 最接近直系血親元素
+        ●.parents()- 往上選取全部
+        ●.parentsUntil()- 往上選取全部並設定停止的元素 -->
+    <!-- ●.next()- 往後找一個元素
+        ●.nextAll()- 往後及其之後的元素
+        ●.nextUntil()- 往後選但到特定元素後停止
+    -->
+    <!-- ●.prev()-往前找一個元素
+        ●.prevAll()-往前及其之前的元素
+        ●.prevUntil()-往前選但到特定元素停止
+    -->
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // $(".level-1").find(".item-3").css("border", "1px solid red");
+        // $(".level-1").find(".item-03").css("border", "1px solid red");
+        // $(".level-1").find(".item-003").css("border", "1px solid red");
+        // $('.item-003').closest('.level-1').css('border', '1px solid red');
+        // $('.item-003').parentsUntil('.level-2').css('background', 'red');  //找到level-2就停 不包含level-2
+        // $('.item-001').next().css('border', '1px solid red');往下找
+        // $('.item-003').prev().prev().css('border', '1px solid red'); 往上找
+        // $('.item-003').closest('.item-2').prev().css('border', '1px solid red'); //練習找到item-2再往上找;
+
+    </script>
+</body>
+
+</html>
