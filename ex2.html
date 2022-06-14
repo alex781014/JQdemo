@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+    <style>
+        .cc {
+            width: 250px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex flex-wrap">
+                <div class="box1 cc">box01</div>
+                <div class="box2 cc">box02</div>
+                <div class="box3 cc">box03</div>
+                <div class="box4 cc">box04</div>
+                <div class="box5 cc">box05</div>
+                <div class="box6 cc">box06</div>
+                <div class="box7 cc">box07</div>
+                <div class="box8 cc">box08</div>
+                <div class="box9 cc">box09</div>
+                <div class="box10 cc">box10</div>
+                <div class="box11 cc">box11</div>
+                <div class="box12 cc">box12</div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('.col-12').click((e) => {
+            $(e.target).css('background-color', 'red').nextAll().css('background-color', 'red');
+        })
+    </script>
+</body>
+
+</html>

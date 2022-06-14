@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+</head>
+
+<body>
+    <form>
+        <label for="">username</label>
+        <input type="text" class="username">
+        <br>
+        <label for="">Email address</label>
+        <input type="email" class="email">
+        <br>
+        <label for="">Password</label>
+        <input type="password" class="Password">
+    </form>
+    <div class="btn btn-primary">auto input</div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('.btn').click(function () {
+            $('.username').val("John");
+            $('.email').val("alex781014@gmail.com");
+            $('.Password').val("1234");
+        })
+    </script>
+</body>
+
+</html>
