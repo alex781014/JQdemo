@@ -50,13 +50,16 @@
         $('.checkAll').change((e) => {
             if ($('.checkAll').is(':checked')) {
                 $('.check').prop('checked', true)
+                $('.check').parents('tr').css('background', 'lightblue')
             } else {
                 $('.check').prop('checked', false)
+                $('.check').parents('tr').css('background', 'white')
+
             }
         })
 
         $('.check').change((e) => {
-            if ($(e.target).is(':checked')) {
+            if ($('.check').is(':checked')) {
                 $(e.target.closest('tr')).css('background', 'lightblue')
             } else {
                 $(e.target.closest('tr')).css('background', 'white')
