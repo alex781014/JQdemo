@@ -51,20 +51,21 @@
             ["蘆洲", "三重", "新店", "板橋"],
         ];
 
-        $("#city").change((e) => {
+        $("#city").change(function () {
             // console.log("hi city", $(this).val());
             // console.log(
             //     "hi districtArray data",
             //     districtArray[$(this).val()]
             // );
-            const districtData = districtArray[$($(e.target)).val()];
-            console.log(districtArray[$($(e.target)).val()]);
+            const districtData = districtArray[$(this).val()];
+            console.log(districtData);
+            console.log($(this))
             // $("#district option").eq(0).text(districtData[0]);
             // $("#district option").eq(1).text(districtData[1]);
             // $("#district option").eq(2).text(districtData[2]);
 
             // $("#district option").each((index, elem) => {
-            //     // console.log("hi", $(elem).text());
+            //     console.log("hi", $(elem).text());
             //     $(elem).text(districtData[index]);
             // });
 
@@ -74,7 +75,9 @@
                 // console.log("elem", elem);
                 $("#district").append(
                     `<option value="${index}">${elem}</option>`
-                );
+                )
+                console.log(`<option value="${index}">${elem}</option>`)
+                    ;
             });
         });
 
