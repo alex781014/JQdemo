@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #faf;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(".box").click(function () {
+            console.log("box click.");
+        });
+        $(".box").dblclick(function () {
+            console.log("box dblclick.");
+        });
+        //右鍵觸發
+        $(".box").contextmenu(function () {
+            console.log("box contextmenu.");
+        });
+        //點下左鍵觸發
+        $(".box").mousedown(function () {
+            console.log("box mousedown.");
+        });
+        //左鍵放開觸發
+        $(".box").mouseup(function () {
+            console.log("box mouseup.");
+        });
+        //滑鼠移入選擇器
+        $(".box").mouseenter(function () {
+            console.log("box mouseenter.");
+        });
+        //滑鼠移出選擇器
+        $(".box").mouseleave(function () {
+            console.log("box mouseleave.");
+        });
+        //hover可以分開寫 兩個參數 傳入的是function
+        //額外補充 能把函式當參數傳進去，叫做高階函式
+        $(".box").hover(
+            function () {
+                console.log("box hover.");
+            },
+            function () {
+                //偵測滑出
+            }
+        );
+    </script>
+</body>
+
+</html>
