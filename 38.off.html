@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>off</title>
+</head>
+
+<body>
+    <button id="sayHi">Hi</button>
+    <button id="on">on</button>
+    <button id="off">off</button>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // off 專門用在取消由 on 建立的事件
+        // $("#sayHi").click(function () {
+        //     console.log("hi");
+        // });
+        // 將函式設定成變數
+        const sayHi = function () {
+            console.log("hi");
+        };
+        // on 被點擊時候 sayHi點擊才會執行sayHi 
+        $("#on").click(function () {
+            $("#sayHi").click(sayHi);
+        });
+        //off 點擊時候 把sayhi off掉
+        $("#off").click(function () {
+            $("#sayHi").off("click", sayHi);
+        });
+    </script>
+</body>
+
+</html>
