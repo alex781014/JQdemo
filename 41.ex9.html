@@ -108,6 +108,22 @@
                 move("left", "-=");
             }
         });
+        //監聽下在document e.keyCode可以知道鍵盤按鍵代碼
+        $(document).on('keydown', function (e) {
+            console.log(e.keyCode)
+            if (e.keyCode === 37) {
+                move("left", "-=");
+            }
+            if (e.keyCode === 39) {
+                move("left", "+=");
+            }
+            if (e.keyCode === 38) {
+                move("top", "-=");
+            }
+            if (e.keyCode === 40) {
+                move("top", "+=");
+            }
+        })
     </script>
 </body>
 

@@ -19,7 +19,8 @@
             margin: 20px;
             /* object-fit: fill; */
             height: 13vw;
-            background-origin: content-box;
+            border: 10px solid transparent;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -43,7 +44,7 @@
     <script>
         $('.img-wrap img').click((e) => {
             console.log($(e.target))
-            $(e.target).css('outline', '10px solid red').siblings().css('outline', 'none')
+            $(e.target).css('border', '10px solid red').siblings().css('border', '10px solid transparent')
         })
     </script>
 </body>

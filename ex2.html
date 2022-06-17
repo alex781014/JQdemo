@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
     <style>
-        .cc {
+        .autobg {
             width: 250px;
             height: 100px;
             background-color: aqua;
@@ -20,26 +20,63 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12 d-flex flex-wrap">
-                <div class="box1 cc">box01</div>
-                <div class="box2 cc">box02</div>
-                <div class="box3 cc">box03</div>
-                <div class="box4 cc">box04</div>
-                <div class="box5 cc">box05</div>
-                <div class="box6 cc">box06</div>
-                <div class="box7 cc">box07</div>
-                <div class="box8 cc">box08</div>
-                <div class="box9 cc">box09</div>
-                <div class="box10 cc">box10</div>
-                <div class="box11 cc">box11</div>
-                <div class="box12 cc">box12</div>
-            </div>
+            <div class="col-3 autobg">box1</div>
+            <div class="col-3 autobg">box2</div>
+            <div class="col-3 autobg">box3</div>
+            <div class="col-3 autobg">box4</div>
+            <div class="col-3 autobg">box5</div>
+            <div class="col-3 autobg">box6</div>
+            <div class="col-3 autobg">box7</div>
+            <div class="col-3 autobg">box8</div>
+            <div class="col-3 autobg">box9</div>
+            <div class="col-3 autobg">box10</div>
+            <div class="col-3 autobg">box11</div>
+            <div class="col-3 autobg">box12</div>
+            <!-- <div class="col-12 d-flex flex-wrap">
+                <div class="box1 autobg">box01</div>
+                <div class="box2 autobg">box02</div>
+                <div class="box3 autobg">box03</div>
+                <div class="box4 autobg">box04</div>
+                <div class="box5 autobg">box05</div>
+                <div class="box6 autobg">box06</div>
+                <div class="box7 autobg">box07</div>
+                <div class="box8 autobg">box08</div>
+                <div class="box9 autobg">box09</div>
+                <div class="box10 autobg">box10</div>
+                <div class="box11 autobg">box11</div>
+                <div class="box12 autobg">box12</div>
+            </div> -->
         </div>
     </div>
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
-        $('.col-12').click((e) => {
-            $(e.target).css('background-color', 'red').nextAll().css('background-color', 'red');
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max - 50) + 100);
+        }
+
+        function getRBGA() {
+            return `linear-gradient(135deg, rgba(${getRandomInt(
+                256
+            )},${getRandomInt(256)},${getRandomInt(
+                256
+            )},.5), rgba(${getRandomInt(256)},${getRandomInt(
+                256
+            )},${getRandomInt(256)},.8)`;
+        }
+
+        const elements = document.querySelectorAll(".autobg");
+
+        Array.from(elements).forEach((element, index) => {
+            element.style.backgroundImage = getRBGA();
+        });
+
+                // $('.autobg').each(function (index, currentElement) {
+                //     currentElement.style.backgroundImage = getRBGA();
+                // });
+    </script>
+    <script>
+        $('.col-3').click((e) => {
+            $(e.target).css('background', 'red').nextAll().css('background', 'red');
         })
     </script>
 </body>

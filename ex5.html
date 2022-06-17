@@ -54,15 +54,15 @@
             } else {
                 $('.check').prop('checked', false)
                 $('.check').parents('tr').css('background', 'white')
-
             }
         })
 
         $('.check').change((e) => {
-            if ($('.check').is(':checked')) {
-                $(e.target.closest('tr')).css('background', 'lightblue')
+            if ($(e.target).prop('checked')) {
+                console.log(123)
+                $(e.target).parent().parent().css('background', 'lightblue')
             } else {
-                $(e.target.closest('tr')).css('background', 'white')
+                $(e.target).parent().parent().css('background', 'white')
             }
         });
 
