@@ -73,6 +73,19 @@
             align-items: center;
             cursor: pointer;
         }
+
+        .bef-page-area {
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -108,8 +121,13 @@
         </ul>
 
         <div class="next-page-area">
-            <button>></button>
+            <button>→</button>
         </div>
+
+        <div class="bef-page-area">
+            <button>←</button>
+        </div>
+
     </div>
 
     <script src="./js/jquery-3.6.0.js"></script>
