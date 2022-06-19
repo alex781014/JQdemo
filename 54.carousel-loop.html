@@ -21,9 +21,9 @@
             list-style: none;
             padding: 0;
             display: flex;
-            width: 600%;
+            width: 700%;
             /* border: 2px solid rgb(74, 242, 74); */
-            transform: translateX(-0px);
+            transform: translateX(-800px);
             transition: 0.5s ease;
         }
 
@@ -93,6 +93,9 @@
     <div class="wrap">
         <ul class="train">
             <li>
+                <img src="./imgs/slide5.jpg" alt="" />
+            </li>
+            <li>
                 <img src="./imgs/slide1.jpg" alt="" />
             </li>
             <li>
@@ -142,65 +145,63 @@
         // 2 -> -1600px
         // 3 -> -2400px
 
-        let nowPage = 0;
+        let nowPage = 1
+        trainMove(nowPage);
 
         $(".slider-dots-area li").mouseenter(function () {
-            console.log("hi", $(this).index());
-            // const moveX = [
-            //     "0px",
-            //     "-800px",
-            //     "-1600px",
-            //     "-2400px",
-            //     "-3200px",
-            // ];
-            // console.log(moveX[$(this).index()]);
-            nowPage = $(this).index();
-            trainMove();
+            nowPage = $(this).index() + 1;
+            console.log(nowPage)
+            trainMove(nowPage);
         });
 
         $(".next-page-area").click(function () {
-            console.log("next-page-area");
             nowPage++;
-            trainMove();
-        });
-
-        function trainMove() {
-            console.log("trainMove nowPage", nowPage);
-            const moveX = nowPage * -800 + "px";
-            // 火車移動到 moveX 的位置
-            $("ul.train")
-                .css("transition", ".5s ease")
-                .css("transform", `translateX(${moveX})`);
-
-            $(".slider-dots-area li")
-                .eq(nowPage)
-                .css("background", "#fff")
-                .siblings()
-                .css("background", "transparent");
-        }
-
-        function trainMoveWithoutTransition() {
-            console.log("nowPage", nowPage);
-            const moveX = nowPage * -800 + "px";
-            // 火車移動到 moveX 的位置
-            $("ul.train")
-                .css("transition", "none")
-                .css("transform", `translateX(${moveX})`);
-
-            $(".slider-dots-area li")
-                .eq(nowPage)
-                .css("background", "#fff")
-                .siblings()
-                .css("background", "transparent");
-        }
-
-        $("ul.train").on("transitionend", function () {
-            console.log("transitionend nowPage", nowPage);
-            if (nowPage >= 5) {
-                nowPage = 0;
-                trainMoveWithoutTransition();
+            if (nowPage > 5) {
+                console.log(nowPage)
+                trainMoveWithoutTransition(1);
+            } else {
+                trainMove(nowPage);
             }
         });
+        $(".bef-page-area").click(function () {
+            nowPage--;
+            // trainMove(nowPage);
+            console.log('nowPage', nowPage)
+            if (nowPage <= 0) {
+                nowPage = 5
+                trainMoveWithoutTransition(nowPage);
+                console.log('nowPage', nowPage)
+            } else {
+                trainMove(nowPage);
+                console.log('trythis', nowPage)
+            }
+        });
+
+        function trainMove(index) {
+            nowPage = index
+            const moveX = index * -800 + "px";
+            // 火車移動到 moveX 的位置
+            $("ul.train").css("transition", ".5s ease").css("transform", `translateX(${moveX})`);
+            $(".slider-dots-area li").eq(index - 1).css("background", "#fff").siblings().css("background", "transparent");
+        }
+
+        function trainMoveWithoutTransition(index) {
+            console.log(index)
+            const moveX = (index + 1) * -800 + "px";
+            // 火車移動到 moveX 的位置
+            $("ul.train").css("transition", "none").css("transform", `translateX(${moveX})`);
+            trainMove(index)
+            // setTimeout(() => {
+            //     trainMove(index + 1);
+            // }, 0);
+        }
+
+        // $("ul.train").on("transitionend", function () {
+        //     if (nowPage >= 5) {
+        //         nowPage = 0;
+        //         trainMoveWithoutTransition();
+        //     }
+        // });
     </script>
 </body>
 
