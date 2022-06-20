@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animate</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #afa;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+    <script>
+        // ●.stop() - 在完成動畫之前停止效果
+        // $(selector).stop(stopAll, goToEnd); 
+        // stopAll 參數: 是否停止後續所有動畫，預設為 false
+        // goToEnd參數：是否要立即完成目前進行中的動畫，預設為 false
+        // 例如：
+        // $("button").click(function () {
+        // $('div').stop(true, true);
+        // });
+
+
+        $("#start").click(function () {
+            $(".box")
+                .animate(
+                    {
+                        width: "500px",
+                        backgroundColor: "#ffa",
+                    },
+                    3000
+                )
+                .animate(
+                    {
+                        width: "200px",
+                        opacity: ".5",
+                        backgroundColor: "#faa",
+                    },
+                    2000
+                );
+        });
+
+        $("#stop").click(function () {
+            $(".box").stop(false, false);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animate</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #afa;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Click</button>
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <!-- 如果jq要改顏色要引用下面這支cdn -->
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+    <script>
+        // ●.animate() - 建立自定義動畫
+        //     $(selector).animate({ params }, speed, callback);
+        //     例如：
+        //     $("button").click(function () {
+        //         $("div").animate({
+        //             width: '500px',
+        //             opacity: '0.5',
+        //             backgroundColor: '#aaf',
+        //         });
+
+        $("button").click(function () {
+            $(".box").animate(
+                {
+                    width: "500px",
+                    backgroundColor: "#ffa",
+                },
+                3000
+            );
+        });
+    </script>
+</body>
+
+</html>
